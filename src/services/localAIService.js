@@ -1,8 +1,32 @@
 // This is a mock implementation of a local AI service.
 // In a real application, this function would interact with an on-device
 // machine learning model (e.g., using TensorFlow.js, ONNX Runtime, or WebLLM).
-// For demonstration, it returns predefined suggestions based on keywords.
+
+// --- CONCEPTUAL REAL IMPLEMENTATION ---
+// import { createLocalAI } from 'some-hypothetical-ai-library';
+// let localAI;
+// async function getLocalAI() {
+//     if (!localAI) {
+//         // This would load the model into the browser. It might be a few megabytes.
+//         localAI = await createLocalAI('task-suggestion-model-v1');
+//     }
+//     return localAI;
+// }
+// --- END CONCEPTUAL REAL IMPLEMENTATION ---
+
 export async function suggestTasks(goal) {
+    // --- CONCEPTUAL REAL IMPLEMENTATION ---
+    // try {
+    //     const ai = await getLocalAI();
+    //     const prompt = `Given the goal "${goal}", suggest three to four tasks to achieve it. Return as a JSON array of objects with "title" and "description" keys.`;
+    //     const result = await ai.generate(prompt);
+    //     return JSON.parse(result); // Assuming the model returns a JSON string
+    // } catch (error) {
+    //     console.error("Local AI failed, using fallback suggestions.", error);
+    // }
+    // --- END CONCEPTUAL REAL IMPLEMENTATION ---
+
+    // For demonstration, it returns predefined suggestions based on keywords.
     const lowerCaseGoal = goal.toLowerCase();
     // Simulate a delay, as a local model might take a moment to run.
     await new Promise(resolve => setTimeout(resolve, 300));
