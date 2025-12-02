@@ -16,7 +16,7 @@ export default function TodoApp() {
     const [isConfirmModalOpen, setConfirmModalOpen] = useState(false);
     const [taskToDeleteId, setTaskToDeleteId] = useState(null);
     const [filterPriority, setFilterPriority] = useState('all');
-    const [showCompleted, setShowCompleted] = useState(true);
+    const [showCompleted, setShowCompleted] = useState(false);
     const [searchQuery, setSearchQuery] = useState('');
     const [showSettings, setShowSettings] = useState(false);
     const [showUpcoming, setShowUpcoming] = useLocalStorage('show-upcoming-tasks', true);
@@ -186,7 +186,7 @@ export default function TodoApp() {
     }), [tasks]);
     return (<div className="min-h-screen transition-all duration-300">
       <header className="bg-slate-900/70 backdrop-blur-lg border-b border-slate-700/50 sticky top-0 z-40">
-        <div className="max-w-4xl mx-auto px-6 py-4">
+        <div className="max-w-10xl mx-auto px-10 py-3">
           <div className="flex items-center justify-between">
             <div>
               <h1 className="text-3xl font-bold" style={{ color: settings.accentColor }}>
@@ -211,7 +211,7 @@ export default function TodoApp() {
         </div>
       </header>
 
-      <main className="max-w-4xl mx-auto px-6 py-8">
+      <main className="max-w-8xl mx-auto px-6 py-8">
         {showUpcoming && (<UpcomingTasks tasks={upcomingTasks} onClose={() => setShowUpcoming(false)} onTaskClick={handleTaskClick} accentColor={settings.accentColor}/>)}
         
         {showSettings && (<div className="bg-slate-800/50 rounded-xl shadow-lg p-6 mb-6 border border-slate-700/50 animate-item-fade-in">
